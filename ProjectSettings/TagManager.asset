@@ -4,11 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
-  - Examinable
-=======
   - Interactible
->>>>>>> Stashed changes
+  - Platform
+  - HitchInitial
+  - Rope
+  - Hand
+  - HitchFinal
+  - RopeCorrect
   layers:
   - Default
   - TransparentFX
