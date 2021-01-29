@@ -56,10 +56,7 @@ public class ObjectDetector : MonoBehaviour
     {
         if (Physics.Raycast(myCamera.position, myCamera.forward, out hit, seeDistance, examinableLayer))
         {
-            //if (hit.collider.CompareTag("Examinable"))
-            //{
             objectSeen = hit.collider.GetComponent<Examinable>();
-            //}
         }
         else
         {

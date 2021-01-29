@@ -4,11 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
   - Examinable
-=======
-  - Interactible
->>>>>>> Stashed changes
+  - Collectible
   layers:
   - Default
   - TransparentFX
@@ -19,7 +16,7 @@ TagManager:
   - 
   - 
   - Examine
-  - 
+  - Item
   - 
   - 
   - 
