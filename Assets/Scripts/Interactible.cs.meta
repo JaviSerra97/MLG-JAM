@@ -1,0 +1,22 @@
+<<<<<<< Updated upstream:Assets/Models.meta
+fileFormatVersion: 2
+guid: ebba12623cc80aa4bb9357015a10a2c5
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: 990d98768a11c4dc1b5063299d4ce8f5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> Stashed changes:Assets/Scripts/Interactible.cs.meta
