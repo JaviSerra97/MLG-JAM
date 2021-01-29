@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Examinable
   - Collectible
+  - Interactible
+  - Platform
+  - HitchInitial
+  - Rope
+  - Hand
+  - HitchFinal
+  - RopeCorrect
   layers:
   - Default
   - TransparentFX

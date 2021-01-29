@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -9,9 +10,7 @@ public class LanguageSelector : MonoBehaviour
 
     public bool english = true;
 
-    public TMP_Dropdown languageDropdown;
-
-    public CanvasText[] listOfCanvasTexts;
+    private CanvasText[] listOfCanvasTexts;
 
     private void Awake()
     {
@@ -23,23 +22,18 @@ public class LanguageSelector : MonoBehaviour
         listOfCanvasTexts = GameObject.FindObjectsOfType<CanvasText>();
     }
 
-    private void Update()
+    
+    public void SelectLanguage(int val)
     {
-        if (Input.GetKeyDown(KeyCode.E)) { SelectEnglish(); }
-        if (Input.GetKeyDown(KeyCode.S)) { SelectSpanish(); }
-    }
-
-    public void SelectLanguage()
-    {
-        if(languageDropdown.value == 0) { SelectEnglish(); }
-        else if (languageDropdown.value == 1) { SelectSpanish(); }
+       if(val == 0) { SelectEnglish(); }
+       if(val == 1) { SelectSpanish(); }
     }
 
     void SelectEnglish()
     {
-        english = true;
+        LanguageSelector.instance.english = true;
 
-        foreach(CanvasText CT in listOfCanvasTexts)
+        foreach (CanvasText CT in listOfCanvasTexts)
         {
             CT.SetEnglish();
         }
@@ -47,9 +41,9 @@ public class LanguageSelector : MonoBehaviour
 
     void SelectSpanish()
     {
-        english = false;
+        LanguageSelector.instance.english = false;
 
-        foreach(CanvasText CT in listOfCanvasTexts)
+        foreach (CanvasText CT in listOfCanvasTexts)
         {
             CT.SetSpanish();
         }
