@@ -25,8 +25,9 @@ public class FPSPlayer : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        LockCursor(true);
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     void Update()
@@ -64,5 +65,33 @@ public class FPSPlayer : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+    }
+
+    public void SetExamining(bool isExamining)
+    {
+        if (isExamining)
+        {
+            canMove = false;
+            LockCursor(false);
+        }
+        else
+        {
+            canMove = true;
+            LockCursor(true);
+        }
+    }
+
+    private void LockCursor(bool isLocked)
+    {
+        if (isLocked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }

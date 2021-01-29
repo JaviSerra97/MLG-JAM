@@ -13,12 +13,6 @@ public class ObjectExaminer : MonoBehaviour
     public GameObject examineObjectTexture;
     public Text objectName;
 
-    // test
-    public Renderer testRenderer;
-    public Material seenMaterial;
-    public Material unseenMaterial;
-
-
     private RaycastHit hit;
     private bool examining = false;
     private Vector3 posLastFrame;
@@ -32,15 +26,13 @@ public class ObjectExaminer : MonoBehaviour
     {
         if (Physics.Raycast(examineCamera.position, Vector3.forward, out hit, 100))
         {
-            if (hit.collider.CompareTag("Player"))  // Crear una tag específica
+            if (hit.collider.CompareTag("Examinable"))  // Crear una tag específica
             {
-                Debug.Log("HOLA");
-                testRenderer.material = seenMaterial;
+                // Shader?
             }
             else
             {
-                Debug.Log("Adios");
-                testRenderer.material = unseenMaterial;
+                // Quitar shader?
             }
         }
 
