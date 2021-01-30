@@ -49,7 +49,8 @@ public class Stack : MonoBehaviour
         for (int i = 0; i < stack1.Count; i++)
         {
             Debug.Log("Stack1");
-            stack1[i].transform.position = new Vector3(Tstack1.position.x, Tstack1.position.y + 0.02f+(position1 * distance), Tstack1.position.z);
+            stack1[i].transform.rotation = Quaternion.Euler(new Vector3(Tstack1.rotation.x+90, Tstack1.rotation.y, Tstack1.rotation.z));
+            stack1[i].transform.position = new Vector3(Tstack1.position.x, Tstack1.position.y + 0.04f + (position1 * distance), Tstack1.position.z);
             position1++;
         }
         position1 = 0;
@@ -57,7 +58,8 @@ public class Stack : MonoBehaviour
         for (int i = 0; i < stack2.Count; i++)
         {
             Debug.Log("Stack2");
-            stack2[i].transform.position = new Vector3(Tstack2.position.x, Tstack2.position.y + 0.02f + (position2 * distance), Tstack2.position.z);
+            stack2[i].transform.rotation = Quaternion.Euler(new Vector3(Tstack2.rotation.x+90, Tstack2.rotation.y, Tstack2.rotation.z));
+            stack2[i].transform.position = new Vector3(Tstack2.position.x, Tstack2.position.y + 0.04f + (position2 * distance), Tstack2.position.z);
             position2++;
         }
         position2 = 0;
@@ -106,7 +108,8 @@ public class Stack : MonoBehaviour
         
         for (int i = 0; i < ultimate.Count; i++)
         {
-            ultimate[i].transform.position = ultimate[i].GetComponent<Interactible>().GetInitialPosition();
+           // ultimate[i].transform.rotation = ultimate[i].GetComponent<Interactible>().GetInitialTransform().rotation;
+            ultimate[i].transform.position = ultimate[i].GetComponent<Interactible>().GetInitialTransform().position;
             ultimate[i].GetComponent<Interactible>().RestartInteraction();
         }
         pivot.transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
