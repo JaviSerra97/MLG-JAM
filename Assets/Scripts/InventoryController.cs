@@ -14,6 +14,7 @@ public class InventoryController : MonoBehaviour
 
     public GameObject InventoryItemPrefab;
     public Transform InventoryParent;
+    public List<Sprite> spriteList;
 
     private GameObject currentItem;   // Esto en realidad es la imagen del objeto
     private List<ItemType> itemList;
@@ -50,22 +51,22 @@ public class InventoryController : MonoBehaviour
                 break;
 
             case ItemType.book1:
-                currentItem.GetComponent<Image>().color = Color.red;
+                currentItem.GetComponent<Image>().sprite = spriteList[2];
 
                 break;
 
             case ItemType.book2:
-                currentItem.GetComponent<Image>().color = Color.blue;
+                currentItem.GetComponent<Image>().sprite = spriteList[3];
 
                 break;
 
             case ItemType.book3:
-                currentItem.GetComponent<Image>().color = Color.green;
+                currentItem.GetComponent<Image>().sprite = spriteList[4];
 
                 break;
 
             case ItemType.book4:
-                currentItem.GetComponent<Image>().color = Color.white;
+                currentItem.GetComponent<Image>().sprite = spriteList[5];
 
                 break;
 
