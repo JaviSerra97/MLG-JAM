@@ -19,5 +19,4 @@ public class SliderValue : MonoBehaviour
     {
         text.text = slider.value.ToString();
     }
-
 }
