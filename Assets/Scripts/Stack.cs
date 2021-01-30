@@ -108,8 +108,8 @@ public class Stack : MonoBehaviour
         
         for (int i = 0; i < ultimate.Count; i++)
         {
-           // ultimate[i].transform.rotation = ultimate[i].GetComponent<Interactible>().GetInitialTransform().rotation;
-            ultimate[i].transform.position = ultimate[i].GetComponent<Interactible>().GetInitialTransform().position;
+            ultimate[i].transform.rotation = ultimate[i].GetComponent<Interactible>().GetInitialRotation();
+            ultimate[i].transform.position = ultimate[i].GetComponent<Interactible>().GetInitialPosition();
             ultimate[i].GetComponent<Interactible>().RestartInteraction();
         }
         pivot.transform.rotation = Quaternion.Euler(new Vector3(0,0,0));

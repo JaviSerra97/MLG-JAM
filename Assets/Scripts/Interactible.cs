@@ -6,8 +6,8 @@ public class Interactible : MonoBehaviour
 {
     public Interaction interaction;
     private bool interactive;
-    private Transform InitialPosition;
-
+    private Vector3 InitialPosition;
+    private Quaternion InitialRotation;
 
     private Renderer objectRenderer;
     private Material originalMaterial;
@@ -17,7 +17,8 @@ public class Interactible : MonoBehaviour
         interactive = true;
         objectRenderer = GetComponent<Renderer>();
         originalMaterial = objectRenderer.material;
-        InitialPosition = gameObject.transform;
+        InitialPosition = gameObject.transform.position;
+        InitialRotation = gameObject.transform.rotation;
 
     }
 
@@ -73,9 +74,14 @@ public class Interactible : MonoBehaviour
         objectRenderer.material = material;
     }
 
-    public Transform GetInitialTransform()
+    public Vector3 GetInitialPosition()
     {
         return InitialPosition;
+    }
+
+    public Quaternion GetInitialRotation()
+    {
+        return InitialRotation;
     }
 }
     

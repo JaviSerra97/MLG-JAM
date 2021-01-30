@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
         musicEV.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(cameraPos));
         musicEV.start();
 
-        ropeAudio = FMODUnity.RuntimeManager.CreateInstance(movement);
+        //ropeAudio = FMODUnity.RuntimeManager.CreateInstance(movement);
     }
 
     // Update is called once per frame
