@@ -7,7 +7,7 @@ public class InventoryController : MonoBehaviour
 {
     public enum ItemType
     {
-        none, notaOsito, llaveOsito,
+        none, notaOsito, llaveOsito, book, mouse, keyboard,
     }
 
     public static InventoryController instance;
@@ -43,12 +43,27 @@ public class InventoryController : MonoBehaviour
 
                 break;
 
+            case ItemType.book:
+                currentItem.GetComponent<Image>().color = Color.red;
+
+                break;
+
+            case ItemType.mouse:
+                currentItem.GetComponent<Image>().color = Color.blue;
+
+                break;
+
+            case ItemType.keyboard:
+                currentItem.GetComponent<Image>().color = Color.magenta;
+
+                break;
+
             default:
                 break;
         }
     }
 
-    public void RemoveItem(ItemType type)
+    /*public void RemoveItem(ItemType type)
     {
         // Borra el objeto para no poder usarlo más
         int index = itemList.IndexOf(type);
@@ -57,6 +72,20 @@ public class InventoryController : MonoBehaviour
         // Borra el item de la interfaz
         Destroy(itemImageList[index]);
         itemImageList.RemoveAt(index);
+    }*/
+
+    public void RemoveItem(ItemType type)
+    {
+        // Borra el objeto para no poder usarlo más
+        if (CheckItem(type))
+        {
+            int index = itemList.IndexOf(type);
+            itemList.Remove(type);
+
+            // Borra el item de la interfaz
+            Destroy(itemImageList[index]);
+            itemImageList.RemoveAt(index);
+        }
     }
 
     public bool CheckItem(ItemType type)
@@ -65,6 +94,7 @@ public class InventoryController : MonoBehaviour
         {
             Debug.Log(itemList[i]);
         }
+        Debug.Log(itemList.Contains(type));
         return itemList.Contains(type);
     }
 }
