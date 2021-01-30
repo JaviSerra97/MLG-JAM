@@ -7,7 +7,7 @@ public class InventoryController : MonoBehaviour
 {
     public enum ItemType
     {
-        none, notaOsito, llaveOsito, book, mouse, keyboard,
+        none, notaOsito, llaveOsito, book, mouse, keyboard, nota2, nota3, nota4
     }
 
     public static InventoryController instance;

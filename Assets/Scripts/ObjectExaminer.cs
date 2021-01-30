@@ -104,7 +104,7 @@ public class ObjectExaminer : MonoBehaviour
 
     private void BeginExamine()
     {
-        currentExaminedObject.rotation = Quaternion.identity;
+        //currentExaminedObject.rotation = Quaternion.identity;
         currentExaminedObject.gameObject.SetActive(true);
         examineObjectTexture.SetActive(true);
         examining = true;
