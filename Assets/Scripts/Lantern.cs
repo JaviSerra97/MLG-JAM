@@ -40,6 +40,11 @@ public class Lantern : MonoBehaviour
     {
         if (Physics.Raycast(myCamera.position, myCamera.forward, out hit, Distance, interactibleLayer))
         {
+            if (objectSeen != null && hit.collider.GetComponent<Interactible>() != objectSeen)
+            {
+                objectSeen.SetMaterial(objectSeen.GetOriginalMaterial());
+            }
+
             objectSeen = hit.collider.GetComponent<Interactible>();
 
             if (objectSeen != null)
