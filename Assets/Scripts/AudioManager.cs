@@ -6,6 +6,9 @@ public class AudioManager : MonoBehaviour
 {
 
     [FMODUnity.EventRef]
+    public string music;
+
+    [FMODUnity.EventRef]
     public string step;
 
     [FMODUnity.EventRef]
@@ -40,18 +43,27 @@ public class AudioManager : MonoBehaviour
 
     private Transform cameraPos;
     FMOD.Studio.EventInstance musicEV;
+    FMOD.Studio.EventInstance ropeAudio;
+
+    private bool ropeActivated = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
         cameraPos = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+
+        musicEV = FMODUnity.RuntimeManager.CreateInstance(music);
+        musicEV.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(cameraPos));
+        musicEV.start();
+
+        ropeAudio = FMODUnity.RuntimeManager.CreateInstance(movement);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        ropeAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(cameraPos));
     }
 
     /*Pasos para poner en la animacion*/
@@ -111,9 +123,21 @@ public class AudioManager : MonoBehaviour
 
     /* para cuando camina entre la cuerda */
     // Es un bucle
-    public void playRope()
+    public void PlayStartAudio()
     {
-        playOneShot(rope);
+        if (!ropeActivated)
+        {
+            ropeAudio.start();
+            ropeActivated = true;
+        }
+    }
+    public void StopRopeAudio()
+    {
+        if (ropeActivated)
+        {
+            ropeAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            ropeActivated = false;
+        }
     }
 
     private void playOneShot(string name)
