@@ -62,7 +62,7 @@ public class Lantern : MonoBehaviour
     {
         if (debug)
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.white, Distance);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward)* Distance, Color.red);
         }
     }  
 }

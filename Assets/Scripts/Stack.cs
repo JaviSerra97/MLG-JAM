@@ -96,13 +96,15 @@ public class Stack : MonoBehaviour
             }
 
             if (reset)
-                ResetHeap();
+                Invoke("ResetHeap",2f);
 
     }
 
     public void ResetHeap()
     {
-        for (int i = iterator; i < ultimate.Count; i++)
+        Debug.Log("ResetHeap");
+        
+        for (int i = 0; i < ultimate.Count; i++)
         {
             ultimate[i].transform.position = ultimate[i].GetComponent<Interactible>().GetInitialPosition();
             ultimate[i].GetComponent<Interactible>().RestartInteraction();
@@ -110,7 +112,9 @@ public class Stack : MonoBehaviour
         pivot.transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
         stack1.Clear();
         stack2.Clear();
+        ultimate.Clear();
         iterator = 0;
         InventoryController.instance.SetPutted(0);
+        
     }
 }

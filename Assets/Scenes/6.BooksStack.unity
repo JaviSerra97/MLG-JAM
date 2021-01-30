@@ -988,8 +988,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096b6ed89cf1d4529bd3a996b6471b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Distance: 2
-  debug: 0
+  Distance: 4
+  debug: 1
+  myCamera: {fileID: 172899722}
+  outlineMaterial: {fileID: 2100000, guid: 26e75cc3ec57de0428599ef264a886b1, type: 2}
 --- !u!1 &700058919
 GameObject:
   m_ObjectHideFlags: 0
