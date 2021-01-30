@@ -13,11 +13,15 @@ public class ObjectExaminer : MonoBehaviour
     public GameObject examineObjectTexture;
     public Text objectName;
 
+    public Material outlineMaterial;
+
     private RaycastHit hit;
     private bool examining = false;
     private Vector3 posLastFrame;
     private bool interactionAvailable = false;
     private bool blocked = false;
+
+    private Examinable currentExaminable;
 
     private void Awake()
     {
@@ -47,15 +51,20 @@ public class ObjectExaminer : MonoBehaviour
     {
         if (Physics.Raycast(examineCamera.position, Vector3.forward, out hit, 100))
         {
-            if (hit.collider.CompareTag("Examinable"))  // Crear una tag específica
+            if (hit.collider.CompareTag("Examinable"))
             {
-                // Shader?
+                currentExaminable = hit.collider.GetComponent<Examinable>();
+                currentExaminable.SetMaterial(outlineMaterial);
                 interactionAvailable = true;
             }
             else
             {
-                // Quitar shader?
-                interactionAvailable = false;
+                if (interactionAvailable)
+                {
+                    currentExaminable.SetMaterial(currentExaminable.GetOriginalMaterial());
+
+                    interactionAvailable = false;
+                }
             }
         }
     }
