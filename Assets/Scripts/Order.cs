@@ -10,9 +10,14 @@ public class Order : MonoBehaviour
     {
         for(int i = 0; i < orderToActivate.Count; i++)
         {
-            if (i > 0)
+            if (i == 0)
             {
-                if (orderToActivate[i].activeInHierarchy && !orderToActivate[i-1].activeInHierarchy)
+                if (!orderToActivate[0].activeInHierarchy)
+                    DeactivateAll();
+            }
+            else
+            {
+                if (orderToActivate[i].activeInHierarchy && !orderToActivate[i - 1].activeInHierarchy)
                 {
                     DeactivateAll();
                 }

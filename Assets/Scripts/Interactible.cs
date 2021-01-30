@@ -10,8 +10,6 @@ public class Interactible : MonoBehaviour
     {
         if (interaction.itemNeeded == InventoryController.ItemType.none || InventoryController.instance.CheckItem(interaction.itemNeeded))
         {
-            interaction.OnInteract.Invoke();
-
             for (int i = 0; i < interaction.addToInventory.Count; i++)
             {
                 InventoryController.instance.AddItem(interaction.addToInventory[i]);
@@ -27,10 +25,13 @@ public class Interactible : MonoBehaviour
                 interaction.objectsToActivate[i].SetActive(true);
             }
 
+            interaction.OnInteract.Invoke();
+
             for (int i = 0; i < interaction.objectsToDeactivate.Count; i++)
             {
                 interaction.objectsToDeactivate[i].SetActive(false);
             }
+
         }
     }
 }
