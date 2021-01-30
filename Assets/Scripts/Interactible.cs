@@ -7,9 +7,14 @@ public class Interactible : MonoBehaviour
     public Interaction interaction;
     private bool interactive;
 
+    private Renderer objectRenderer;
+    private Material originalMaterial;
+
     private void Awake()
     {
         interactive = true;
+        objectRenderer = GetComponent<Renderer>();
+        originalMaterial = objectRenderer.material;
     }
 
     public void Execute()
@@ -52,5 +57,15 @@ public class Interactible : MonoBehaviour
     public void RestartInteraction()
     {
         interactive = true;
+    }
+
+    public Material GetOriginalMaterial()
+    {
+        return originalMaterial;
+    }
+
+    public void SetMaterial(Material material)
+    {
+        objectRenderer.material = material;
     }
 }
