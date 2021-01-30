@@ -41,11 +41,11 @@ public class Door : MonoBehaviour
     
     private void OpenDoor()
     {
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.EulerAngles(new Vector3(0, RotationToOpen, 0)), OpenTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(new Vector3(0, RotationToOpen, 0)), OpenTime);
     }
 
     private void CloseDoor()
     {
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.EulerAngles(new Vector3(0, RotationToClose, 0)), Closetime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(new Vector3(0, RotationToClose, 0)), Closetime);
     }
 }

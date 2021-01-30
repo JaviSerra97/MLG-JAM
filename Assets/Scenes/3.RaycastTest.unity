@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
+  m_AmbientSkyColor: {r: 0.17254902, g: 0.17254902, b: 0.17254902, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -579,7 +579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990d98768a11c4dc1b5063299d4ce8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit: 0
 --- !u!1 &454777581
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +589,6 @@ GameObject:
   m_Component:
   - component: {fileID: 454777582}
   - component: {fileID: 454777584}
-  - component: {fileID: 454777583}
   - component: {fileID: 454777585}
   m_Layer: 0
   m_Name: Lantern
@@ -613,18 +611,6 @@ Transform:
   m_Father: {fileID: 153793613}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!122 &454777583
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454777581}
-  m_Enabled: 1
-  m_Color:
-    serializedVersion: 2
-    rgba: 4281987059
-  m_Size: 0.07
 --- !u!108 &454777584
 Light:
   m_ObjectHideFlags: 0
@@ -1250,7 +1236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990d98768a11c4dc1b5063299d4ce8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit: 1
 --- !u!1 &2024198879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,4 +1342,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990d98768a11c4dc1b5063299d4ce8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit: 2

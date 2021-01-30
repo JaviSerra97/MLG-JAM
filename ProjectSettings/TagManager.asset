@@ -13,6 +13,7 @@ TagManager:
   - Hand
   - HitchFinal
   - RopeCorrect
+  - Order
   layers:
   - Default
   - TransparentFX
