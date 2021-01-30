@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
     public float RotationToOpen, RotationToClose;
 
     private bool TriggerStay;
+    
 
     private void Awake()
     {
