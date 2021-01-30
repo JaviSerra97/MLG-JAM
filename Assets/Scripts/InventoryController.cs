@@ -18,11 +18,10 @@ public class InventoryController : MonoBehaviour
     private GameObject currentItem;   // Esto en realidad es la imagen del objeto
     private List<ItemType> itemList;
     private List<GameObject> itemImageList;
+
+
     private int putted;
-
-  
     public List<GameObject> ultimateDestroyObject;
-
 
 
     private void Awake()
@@ -70,17 +69,6 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    /*public void RemoveItem(ItemType type)
-    {
-        // Borra el objeto para no poder usarlo más
-        int index = itemList.IndexOf(type);
-        itemList.Remove(type);
-
-        // Borra el item de la interfaz
-        Destroy(itemImageList[index]);
-        itemImageList.RemoveAt(index);
-    }*/
-
     public void RemoveItem(ItemType type)
     {
         // Borra el objeto para no poder usarlo más
@@ -105,9 +93,14 @@ public class InventoryController : MonoBehaviour
         return itemList.Contains(type);
     }
 
-    public void SetPutted()
+    public void AddPutted()
     {
         putted++;
+    }
+
+    public void SetPutted(int put)
+    {
+        putted = put;
     }
 
     public int GetPutted()

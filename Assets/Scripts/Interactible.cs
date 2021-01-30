@@ -6,6 +6,7 @@ public class Interactible : MonoBehaviour
 {
     public Interaction interaction;
     private bool interactive;
+    private Vector3 InitialPosition;
 
     private Renderer objectRenderer;
     private Material originalMaterial;
@@ -13,8 +14,12 @@ public class Interactible : MonoBehaviour
     private void Awake()
     {
         interactive = true;
+<<<<<<< Updated upstream
         objectRenderer = GetComponent<Renderer>();
         originalMaterial = objectRenderer.material;
+=======
+        InitialPosition = gameObject.transform.position;
+>>>>>>> Stashed changes
     }
 
     public void Execute()
@@ -59,6 +64,7 @@ public class Interactible : MonoBehaviour
         interactive = true;
     }
 
+<<<<<<< Updated upstream
     public Material GetOriginalMaterial()
     {
         return originalMaterial;
@@ -67,5 +73,10 @@ public class Interactible : MonoBehaviour
     public void SetMaterial(Material material)
     {
         objectRenderer.material = material;
+=======
+    public Vector3 GetInitialPosition()
+    {
+        return InitialPosition;
+>>>>>>> Stashed changes
     }
 }

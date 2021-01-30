@@ -10,6 +10,7 @@ TagManager:
   - Collectible
   - Stack1
   - Stack2
+  - PivotWeightScale
   layers:
   - Default
   - TransparentFX
