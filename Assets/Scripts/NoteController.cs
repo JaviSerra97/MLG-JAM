@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NoteController : MonoBehaviour
 {
     public static NoteController instance;
     public GameObject notePanel;
+    public Text noteText;
+
+    public List<Note> noteList;
 
     [HideInInspector]
     public bool showingNote = false;
@@ -28,7 +32,7 @@ public class NoteController : MonoBehaviour
 
     public void ShowNote(int index)
     {
-        // index es para identificar la nota y cambiar el texto
+        SetNoteText(index);
         notePanel.SetActive(true);
         showingNote = true;
         ObjectExaminer.instance.BlockActions();
@@ -44,5 +48,17 @@ public class NoteController : MonoBehaviour
     {
         showingNote = false;
         ObjectExaminer.instance.UnblockActions();
+    }
+
+    private void SetNoteText(int index)
+    {
+        if (LanguageSelector.instance.english)
+        {
+            noteText.text = noteList[index].englishText;
+        }
+        else
+        {
+            noteText.text = noteList[index].spanishText;
+        }
     }
 }
