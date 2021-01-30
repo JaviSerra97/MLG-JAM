@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -862,11 +862,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271575752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.93, y: 1.02, z: -14.63}
+  m_LocalPosition: {x: -2.2000003, y: 1.02, z: 0.46000004}
   m_LocalScale: {x: 2.26145, y: 2, z: 0.47129}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 7938812624459980049}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1271575754
 BoxCollider:
@@ -1316,7 +1316,7 @@ PrefabInstance:
     - target: {fileID: 7938812625447423117, guid: 18637062ad61a4bbe8a2721cf7f4d66e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7.13
       objectReference: {fileID: 0}
     - target: {fileID: 7938812625447423117, guid: 18637062ad61a4bbe8a2721cf7f4d66e,
         type: 3}
@@ -1326,7 +1326,7 @@ PrefabInstance:
     - target: {fileID: 7938812625447423117, guid: 18637062ad61a4bbe8a2721cf7f4d66e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -15.09
       objectReference: {fileID: 0}
     - target: {fileID: 7938812625447423117, guid: 18637062ad61a4bbe8a2721cf7f4d66e,
         type: 3}
@@ -1351,7 +1351,7 @@ PrefabInstance:
     - target: {fileID: 7938812625447423117, guid: 18637062ad61a4bbe8a2721cf7f4d66e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7938812625447423117, guid: 18637062ad61a4bbe8a2721cf7f4d66e,
         type: 3}
@@ -1368,5 +1368,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7938812625447423119, guid: 18637062ad61a4bbe8a2721cf7f4d66e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 5.455842
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938812625447423119, guid: 18637062ad61a4bbe8a2721cf7f4d66e,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -2.42411
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18637062ad61a4bbe8a2721cf7f4d66e, type: 3}
+--- !u!4 &7938812624459980049 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7938812625447423117, guid: 18637062ad61a4bbe8a2721cf7f4d66e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7938812624459980048}
+  m_PrefabAsset: {fileID: 0}

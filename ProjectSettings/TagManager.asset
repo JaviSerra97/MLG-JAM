@@ -5,8 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactible
-  - Collectible
+  - Order
   - Examinable
+  - Collectible
+  - Stack1
+  - Stack2
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - Examinable
+  - 
   - 
   - 
   - 
