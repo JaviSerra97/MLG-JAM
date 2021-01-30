@@ -41,11 +41,17 @@ public class AudioManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string rope;
 
+    [SerializeField] [Range(-80f, 10f)]
+    private float musicVolume;
+    private float sfxVolume;
+
     private Transform cameraPos;
     FMOD.Studio.EventInstance musicEV;
     FMOD.Studio.EventInstance ropeAudio;
 
     private bool ropeActivated = false;
+    FMOD.Studio.Bus sfxBus;
+    FMOD.Studio.Bus musicBus;
 
 
     // Start is called before the first frame update
@@ -57,7 +63,10 @@ public class AudioManager : MonoBehaviour
         musicEV.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(cameraPos));
         musicEV.start();
 
-        //ropeAudio = FMODUnity.RuntimeManager.CreateInstance(movement);
+
+        sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
+        musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Music");
+        ropeAudio = FMODUnity.RuntimeManager.CreateInstance(rope);
     }
 
     // Update is called once per frame
@@ -123,7 +132,7 @@ public class AudioManager : MonoBehaviour
 
     /* para cuando camina entre la cuerda */
     // Es un bucle
-    public void PlayStartAudio()
+    public void PlayRopeAudio()
     {
         if (!ropeActivated)
         {
@@ -138,6 +147,18 @@ public class AudioManager : MonoBehaviour
             ropeAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             ropeActivated = false;
         }
+    }
+
+    public void setMusicVolume(float volume)
+    {
+        musicVolume = Mathf.Pow(10.0f, volume / 20f);
+        musicBus.setVolume(musicVolume);
+    }
+
+    public void setSFXVolume(float volume)
+    {
+        sfxVolume = Mathf.Pow(10.0f, volume / 20f);
+        sfxBus.setVolume(sfxVolume);
     }
 
     private void playOneShot(string name)
