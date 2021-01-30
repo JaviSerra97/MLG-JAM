@@ -8,24 +8,31 @@ public class Interactible : MonoBehaviour
 
     public void Execute()
     {
-        for (int i = 0; i < interaction.addToInventory.Count; i++)
-        {
-            InventoryController.instance.AddItem(interaction.addToInventory[i]);
-        }
+        Debug.Log("HOLA");
 
-        for (int i = 0; i < interaction.removeFromInventory.Count; i++)
+        if (interaction.itemNeeded == InventoryController.ItemType.none || InventoryController.instance.CheckItem(interaction.itemNeeded))
         {
-            InventoryController.instance.RemoveItem(interaction.removeFromInventory[i]);
-        }
+            interaction.OnInteract.Invoke();
 
-        for (int i=0; i < interaction.objectsToActivate.Count; i++)
-        {
-            interaction.objectsToActivate[i].SetActive(true);
-        }
+            for (int i = 0; i < interaction.addToInventory.Count; i++)
+            {
+                InventoryController.instance.AddItem(interaction.addToInventory[i]);
+            }
 
-        for (int i = 0; i < interaction.objectsToDeactivate.Count; i++)
-        {
-            interaction.objectsToDeactivate[i].SetActive(false);
+            for (int i = 0; i < interaction.removeFromInventory.Count; i++)
+            {
+                InventoryController.instance.RemoveItem(interaction.removeFromInventory[i]);
+            }
+
+            for (int i=0; i < interaction.objectsToActivate.Count; i++)
+            {
+                interaction.objectsToActivate[i].SetActive(true);
+            }
+
+            for (int i = 0; i < interaction.objectsToDeactivate.Count; i++)
+            {
+                interaction.objectsToDeactivate[i].SetActive(false);
+            }
         }
     }
 }

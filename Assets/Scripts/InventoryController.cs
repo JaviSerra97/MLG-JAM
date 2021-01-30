@@ -7,7 +7,7 @@ public class InventoryController : MonoBehaviour
 {
     public enum ItemType
     {
-        notaOsito, llaveOsito,
+        none, notaOsito, llaveOsito,
     }
 
     public static InventoryController instance;
@@ -61,6 +61,10 @@ public class InventoryController : MonoBehaviour
 
     public bool CheckItem(ItemType type)
     {
+        for (int i=0; i < itemList.Count; i++)
+        {
+            Debug.Log(itemList[i]);
+        }
         return itemList.Contains(type);
     }
 }

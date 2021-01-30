@@ -1626,13 +1626,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction:
     label: Nota osito
+    itemNeeded: 0
     objectsToActivate:
     - {fileID: 1020361768}
     - {fileID: 1467487383}
     objectsToDeactivate:
     - {fileID: 576287339}
-    addToInventory: 00000000
+    addToInventory: 01000000
     removeFromInventory: 
+    OnInteract:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &590158277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,8 +2208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096b6ed89cf1d4529bd3a996b6471b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Distance: 3
-  debug: 0
+  Distance: 5
+  debug: 1
 --- !u!1 &828220186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,9 +2297,10 @@ GameObject:
   - component: {fileID: 838866381}
   - component: {fileID: 838866380}
   - component: {fileID: 838866379}
+  - component: {fileID: 838866383}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Interactible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2375,6 +2380,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &838866383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838866378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5d457edbb76f04d9e67031231b7ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction:
+    label: Puerta
+    itemNeeded: 2
+    objectsToActivate: []
+    objectsToDeactivate:
+    - {fileID: 838866378}
+    addToInventory: 
+    removeFromInventory: 
+    OnInteract:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &974954771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,11 +2589,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction:
     label: Llave osito
+    itemNeeded: 0
     objectsToActivate: []
     objectsToDeactivate:
     - {fileID: 1020361768}
-    addToInventory: 01000000
+    addToInventory: 02000000
     removeFromInventory: 
+    OnInteract:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1100395916
 GameObject:
   m_ObjectHideFlags: 0
