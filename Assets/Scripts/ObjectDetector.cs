@@ -32,14 +32,14 @@ public class ObjectDetector : MonoBehaviour
     {
         if (isExamining)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && !NoteController.instance.showingNote)
             {
                 StopExamine();
             }
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 StartExamine();
             }

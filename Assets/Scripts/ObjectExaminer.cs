@@ -62,7 +62,7 @@ public class ObjectExaminer : MonoBehaviour
 
     private void CheckInteraction()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             hit.collider.GetComponent<Interactible>().Execute();
         }
@@ -70,12 +70,12 @@ public class ObjectExaminer : MonoBehaviour
 
     private void Examine()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             posLastFrame = Input.mousePosition;
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             Vector3 delta = Input.mousePosition - posLastFrame;
             posLastFrame = Input.mousePosition;
