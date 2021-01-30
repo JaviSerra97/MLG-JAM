@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{8baeb46b-8914-4278-8772-ca6f3ad438d3}">
+		<property name="assetPath">
+			<value>Step (wood) 3.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.94040816326530607</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7a822e2b-228c-4309-8c47-d253ce05e1d3}</destination>
+		</relationship>
+	</object>
+</objects>

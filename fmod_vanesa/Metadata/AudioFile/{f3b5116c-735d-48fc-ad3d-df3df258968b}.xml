@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{f3b5116c-735d-48fc-ad3d-df3df258968b}">
+		<property name="assetPath">
+			<value>flicker_short1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.034285714285714287</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7a822e2b-228c-4309-8c47-d253ce05e1d3}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{66fa678b-0415-40a5-977c-377ca5aaa5b0}">
+		<property name="assetPath">
+			<value>foley_object_grab_pickup_02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.31362499999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7a822e2b-228c-4309-8c47-d253ce05e1d3}</destination>
+		</relationship>
+	</object>
+</objects>
