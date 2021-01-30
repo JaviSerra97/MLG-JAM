@@ -7,10 +7,16 @@ public class CorkboardController : MonoBehaviour
     public static CorkboardController instance;
 
     [Header("Prop")]
-    public GameObject note1, note2, note3, note4;
+    public GameObject note1;
+    public GameObject note2;
+    public GameObject note3;
+    public GameObject note4;
 
     [Header("Examinando")]
-    public GameObject note1Examine, note2Examine, note3Examine, note4Examine;
+    public GameObject note1Examine;
+    public GameObject note2Examine;
+    public GameObject note3Examine;
+    public GameObject note4Examine;
 
     private void Awake()
     {
