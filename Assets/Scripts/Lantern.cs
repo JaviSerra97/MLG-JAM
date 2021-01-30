@@ -8,6 +8,7 @@ public class Lantern : MonoBehaviour
     public bool debug;
     public Transform myCamera;
     public Material outlineMaterial;
+    public LayerMask interactibleLayer;
 
     private Interactible objectSeen;
     private RaycastHit hit;
@@ -37,7 +38,7 @@ public class Lantern : MonoBehaviour
 
     private Interactible CheckObjectSeen()
     {
-        if (Physics.Raycast(myCamera.position, myCamera.forward, out hit, Distance))
+        if (Physics.Raycast(myCamera.position, myCamera.forward, out hit, Distance, interactibleLayer))
         {
             objectSeen = hit.collider.GetComponent<Interactible>();
 
