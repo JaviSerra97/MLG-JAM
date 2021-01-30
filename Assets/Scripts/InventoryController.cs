@@ -7,7 +7,7 @@ public class InventoryController : MonoBehaviour
 {
     public enum ItemType
     {
-        none, notaOsito, llaveOsito, book, mouse, keyboard, nota2, nota3, nota4
+        none, notaOsito, llaveOsito, book1, book2, book3, book4, nota1, nota2, nota3, nota4,
     }
 
     public static InventoryController instance;
@@ -49,18 +49,23 @@ public class InventoryController : MonoBehaviour
 
                 break;
 
-            case ItemType.book:
+            case ItemType.book1:
                 currentItem.GetComponent<Image>().color = Color.red;
 
                 break;
 
-            case ItemType.mouse:
+            case ItemType.book2:
                 currentItem.GetComponent<Image>().color = Color.blue;
 
                 break;
 
-            case ItemType.keyboard:
-                currentItem.GetComponent<Image>().color = Color.magenta;
+            case ItemType.book3:
+                currentItem.GetComponent<Image>().color = Color.green;
+
+                break;
+
+            case ItemType.book4:
+                currentItem.GetComponent<Image>().color = Color.white;
 
                 break;
 
