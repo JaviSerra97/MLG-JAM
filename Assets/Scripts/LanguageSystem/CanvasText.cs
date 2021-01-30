@@ -5,8 +5,8 @@ using TMPro;
 
 public class CanvasText : MonoBehaviour
 {
-    public string englishText;
-    public string spanishText;
+    public string englishOption;
+    public string spanishOption;
 
     private TMP_Text text;
 
@@ -15,6 +15,13 @@ public class CanvasText : MonoBehaviour
         text = GetComponent<TMP_Text>();
     }
 
-    public void SetEnglish() { text.text = englishText; }
-    public void SetSpanish() { text.text = spanishText; }
+    public void SetEnglish()
+    {
+        text.text = englishOption;
+    }
+
+    public void SetSpanish()
+    {
+        text.text = spanishOption;
+    }
 }

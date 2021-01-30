@@ -14,11 +14,11 @@ public class Lantern : MonoBehaviour
     {
         ray = new Ray(transform.position, transform.forward);
 
-        if (Physics.Raycast(ray, out hit, Distance))
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, Distance))
         {
             if (hit.collider.tag == "Interactible")
             {
-                hit.collider.gameObject.GetComponent<Interactible>().execute();
+                hit.collider.gameObject.GetComponent<Interactible>().Execute();
             }
         }
     }

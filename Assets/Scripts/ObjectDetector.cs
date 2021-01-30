@@ -30,36 +30,46 @@ public class ObjectDetector : MonoBehaviour
 
     private void CheckAction()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isExamining)
         {
-            if (isExamining)
+            if (Input.GetKeyDown(KeyCode.Escape) && !NoteController.instance.showingNote)
             {
-                isExamining = false;
-                ObjectExaminer.instance.EndExamine();
-                playerController.SetExamining(false);
-            }
-            else
-            {
-                CheckObjectSeen();
-
-                if (objectSeen != null)
-                {
-                    isExamining = true;
-                    objectSeen.ExamineObject();
-                    playerController.SetExamining(true);
-                }
+                StopExamine();
             }
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                StartExamine();
+            }
+        }
+    }
+
+    private void StartExamine()
+    {
+        CheckObjectSeen();
+
+        if (objectSeen != null)
+        {
+            isExamining = true;
+            objectSeen.ExamineObject();
+            playerController.SetExamining(true);
+        }
+    }
+
+    public void StopExamine()
+    {
+        isExamining = false;
+        ObjectExaminer.instance.EndExamine();
+        playerController.SetExamining(false);
     }
 
     private Examinable CheckObjectSeen()
     {
         if (Physics.Raycast(myCamera.position, myCamera.forward, out hit, seeDistance, examinableLayer))
         {
-            //if (hit.collider.CompareTag("Examinable"))
-            //{
             objectSeen = hit.collider.GetComponent<Examinable>();
-            //}
         }
         else
         {
