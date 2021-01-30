@@ -65,6 +65,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1190
   Exists: 1
+--- !u!114 &-6503402114308620436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/rope
+  m_EditorClassIdentifier: 
+  Path: event:/rope
+  guid: 3940f7bc973a664891436306c358b7a8
+  Banks:
+  - {fileID: 7601700253786663789}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6330523824219159986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,11 +149,11 @@ MonoBehaviour:
   Path: fmod_vanesa/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476103963867148
+  lastModified: 637476189272922002
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1190
+    Value: 1226
   Exists: 1
 --- !u!114 &-4362284727537627620
 MonoBehaviour:
@@ -335,12 +358,13 @@ MonoBehaviour:
   - {fileID: -243936807446215975}
   - {fileID: -2966099653472593874}
   - {fileID: 1920700084231931452}
+  - {fileID: -6503402114308620436}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7990999511323880506}
   StringsBanks:
   - {fileID: -5065877817108009983}
-  stringsBankWriteTime: 637476103963867148
+  stringsBankWriteTime: 637476189272922002
   cacheVersion: 6
 --- !u!114 &122957118594234758
 MonoBehaviour:
@@ -583,7 +607,7 @@ MonoBehaviour:
   Path: fmod_vanesa/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637476103964505208
+  lastModified: 637476189272932017
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -602,7 +626,7 @@ MonoBehaviour:
   Path: fmod_vanesa/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476103963817033
+  lastModified: 637476178898013569
   LoadResult: 0
   FileSizes: []
   Exists: 1
