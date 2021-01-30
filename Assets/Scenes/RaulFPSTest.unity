@@ -1632,7 +1632,7 @@ MonoBehaviour:
     objectsToDeactivate:
     - {fileID: 576287339}
     addToInventory: 00000000
-    deleteFromInventory: 
+    removeFromInventory: 
 --- !u!1 &590158277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,8 +2564,8 @@ MonoBehaviour:
     objectsToActivate: []
     objectsToDeactivate:
     - {fileID: 1020361768}
-    addToInventory: 02000000
-    deleteFromInventory: 
+    addToInventory: 01000000
+    removeFromInventory: 
 --- !u!1 &1100395916
 GameObject:
   m_ObjectHideFlags: 0

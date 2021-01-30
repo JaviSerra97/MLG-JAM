@@ -27,7 +27,5 @@ public class Interactible : MonoBehaviour
         {
             interaction.objectsToDeactivate[i].SetActive(false);
         }
-
-
     }
 }
