@@ -8,6 +8,8 @@ public class ObjectDetector : MonoBehaviour
     public Transform myCamera;
     public LayerMask examinableLayer;
 
+    public Material outlineMaterial;
+
     private RaycastHit hit;
     private Examinable objectSeen = null;
     private bool isExamining = false;
@@ -39,7 +41,9 @@ public class ObjectDetector : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            CheckObjectSeen();
+
+            if (Input.GetKeyDown(KeyCode.Mouse0) && objectSeen != null)
             {
                 StartExamine();
             }
@@ -48,8 +52,6 @@ public class ObjectDetector : MonoBehaviour
 
     private void StartExamine()
     {
-        CheckObjectSeen();
-
         if (objectSeen != null)
         {
             isExamining = true;
@@ -70,10 +72,16 @@ public class ObjectDetector : MonoBehaviour
         if (Physics.Raycast(myCamera.position, myCamera.forward, out hit, seeDistance, examinableLayer))
         {
             objectSeen = hit.collider.GetComponent<Examinable>();
+
+            objectSeen.SetMaterial(outlineMaterial);
         }
         else
         {
-            objectSeen = null;
+            if (objectSeen != null)
+            {
+                objectSeen.SetMaterial(objectSeen.GetOriginalMaterial());
+                objectSeen = null;
+            }
         }
 
         return objectSeen;
