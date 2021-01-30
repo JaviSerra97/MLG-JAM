@@ -18,12 +18,19 @@ public class InventoryController : MonoBehaviour
     private GameObject currentItem;   // Esto en realidad es la imagen del objeto
     private List<ItemType> itemList;
     private List<GameObject> itemImageList;
+    private int putted;
+
+  
+    public List<GameObject> ultimateDestroyObject;
+
+
 
     private void Awake()
     {
         instance = this;
         itemList = new List<ItemType>();
         itemImageList = new List<GameObject>();
+        putted = 0;
     }
 
     public void AddItem(ItemType type)
@@ -96,5 +103,15 @@ public class InventoryController : MonoBehaviour
         }
         Debug.Log(itemList.Contains(type));
         return itemList.Contains(type);
+    }
+
+    public void SetPutted()
+    {
+        putted++;
+    }
+
+    public int GetPutted()
+    {
+        return putted;
     }
 }
