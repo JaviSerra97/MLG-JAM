@@ -28,7 +28,7 @@ public class Stack : MonoBehaviour
             for (int i = iterator; i < ultimate.Count; i++)
             {
                 stack1.Add(ultimate[i]);
-                pivot.transform.Rotate(new Vector3(0, 0, weight));
+                pivot.transform.Rotate(new Vector3(-1 * weight, 0, 0));
                 InventoryController.instance.AddPutted();
                 ultimate[i].SetActive(true);
                 ultimate[i].GetComponent<Interactible>().FinishInteration();
@@ -39,7 +39,7 @@ public class Stack : MonoBehaviour
             for (int i = iterator; i < ultimate.Count; i++)
             {
                 stack2.Add(ultimate[i]);
-                pivot.transform.Rotate(new Vector3(0, 0, -1*weight));
+                pivot.transform.Rotate(new Vector3(weight, 0,0 ));
                 InventoryController.instance.AddPutted();
                 ultimate[i].SetActive(true);
                 ultimate[i].GetComponent<Interactible>().FinishInteration();
@@ -49,7 +49,7 @@ public class Stack : MonoBehaviour
         for (int i = 0; i < stack1.Count; i++)
         {
             Debug.Log("Stack1");
-            stack1[i].transform.position = new Vector3(Tstack1.position.x, Tstack1.position.y + 0.2f + (position1 * distance), Tstack1.position.z);
+            stack1[i].transform.position = new Vector3(Tstack1.position.x, Tstack1.position.y + 0.02f+(position1 * distance), Tstack1.position.z);
             position1++;
         }
         position1 = 0;
@@ -57,7 +57,7 @@ public class Stack : MonoBehaviour
         for (int i = 0; i < stack2.Count; i++)
         {
             Debug.Log("Stack2");
-            stack2[i].transform.position = new Vector3(Tstack2.position.x, Tstack2.position.y + 0.1f+(position2 * distance), Tstack2.position.z);
+            stack2[i].transform.position = new Vector3(Tstack2.position.x, Tstack2.position.y + 0.02f + (position2 * distance), Tstack2.position.z);
             position2++;
         }
         position2 = 0;
