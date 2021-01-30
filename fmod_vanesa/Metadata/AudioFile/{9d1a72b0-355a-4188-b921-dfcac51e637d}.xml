@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{9d1a72b0-355a-4188-b921-dfcac51e637d}">
+		<property name="assetPath">
+			<value>rope.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>10.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7a822e2b-228c-4309-8c47-d253ce05e1d3}</destination>
+		</relationship>
+	</object>
+</objects>
