@@ -7,7 +7,7 @@ public class InventoryController : MonoBehaviour
 {
     public enum ItemType
     {
-        type1, type2, type3
+        notaOsito, llaveOsito,
     }
 
     public static InventoryController instance;
@@ -26,19 +26,6 @@ public class InventoryController : MonoBehaviour
         itemImageList = new List<GameObject>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            RemoveItem(ItemType.type1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            RemoveItem(ItemType.type2);
-        }
-    }
-
     public void AddItem(ItemType type)
     {
         currentItem = Instantiate(InventoryItemPrefab, InventoryParent);
@@ -47,17 +34,12 @@ public class InventoryController : MonoBehaviour
 
         switch (type)
         {
-            case ItemType.type1:
+            case ItemType.notaOsito:
                 currentItem.GetComponent<Image>().color = Color.red;
 
                 break;
-            case ItemType.type2:
+            case ItemType.llaveOsito:
                 currentItem.GetComponent<Image>().color = Color.green;
-
-                break;
-
-            case ItemType.type3:
-                currentItem.GetComponent<Image>().color = Color.blue;
 
                 break;
 

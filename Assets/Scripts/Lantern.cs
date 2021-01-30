@@ -18,7 +18,7 @@ public class Lantern : MonoBehaviour
         {
             if (hit.collider.tag == "Interactible")
             {
-                hit.collider.gameObject.GetComponent<Interactible>().execute();
+                hit.collider.gameObject.GetComponent<Interactible>().Execute();
             }
         }
     }

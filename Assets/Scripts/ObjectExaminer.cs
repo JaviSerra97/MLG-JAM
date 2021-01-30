@@ -16,6 +16,8 @@ public class ObjectExaminer : MonoBehaviour
     private RaycastHit hit;
     private bool examining = false;
     private Vector3 posLastFrame;
+    private bool interactionAvailable = false;
+    private bool blocked = false;
 
     private void Awake()
     {
@@ -24,36 +26,65 @@ public class ObjectExaminer : MonoBehaviour
 
     private void Update()
     {
+        if (!blocked)
+        {
+            CheckExaminable();
+        
+            if (interactionAvailable)
+            {
+                CheckInteraction();
+            }
+
+
+            if (examining)
+            {
+                Examine();
+            }
+        }
+    }
+
+    private void CheckExaminable()
+    {
         if (Physics.Raycast(examineCamera.position, Vector3.forward, out hit, 100))
         {
             if (hit.collider.CompareTag("Examinable"))  // Crear una tag específica
             {
                 // Shader?
+                interactionAvailable = true;
             }
             else
             {
                 // Quitar shader?
-            }
-        }
-
-        
-        if (examining)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                posLastFrame = Input.mousePosition;
-            }
-
-            if (Input.GetMouseButton(0))
-            {
-                Vector3 delta = Input.mousePosition - posLastFrame;
-                posLastFrame = Input.mousePosition;
-
-                Vector3 axis = Quaternion.AngleAxis(-90f, Vector3.forward) * delta;
-                currentExaminedObject.rotation = Quaternion.AngleAxis(delta.magnitude * rotationSpeed * Time.deltaTime, axis) * currentExaminedObject.rotation;
+                interactionAvailable = false;
             }
         }
     }
+
+    private void CheckInteraction()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            hit.collider.GetComponent<Interactible>().Execute();
+        }
+    }
+
+    private void Examine()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            posLastFrame = Input.mousePosition;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 delta = Input.mousePosition - posLastFrame;
+            posLastFrame = Input.mousePosition;
+
+            Vector3 axis = Quaternion.AngleAxis(-90f, Vector3.forward) * delta;
+            currentExaminedObject.rotation = Quaternion.AngleAxis(delta.magnitude * rotationSpeed * Time.deltaTime, axis) * currentExaminedObject.rotation;
+        }
+    }
+
 
     public void SetObjectToExamine(GameObject objectToExamine, string name)
     {
@@ -64,8 +95,8 @@ public class ObjectExaminer : MonoBehaviour
 
     private void BeginExamine()
     {
-        currentExaminedObject.gameObject.SetActive(true);
         currentExaminedObject.rotation = Quaternion.identity;
+        currentExaminedObject.gameObject.SetActive(true);
         examineObjectTexture.SetActive(true);
         examining = true;
     }
@@ -75,5 +106,15 @@ public class ObjectExaminer : MonoBehaviour
         currentExaminedObject.gameObject.SetActive(false);
         examineObjectTexture.SetActive(false);
         examining = false;
+    }
+
+    public void BlockActions()
+    {
+        blocked = true;
+    }
+
+    public void UnblockActions()
+    {
+        blocked = false;
     }
 }

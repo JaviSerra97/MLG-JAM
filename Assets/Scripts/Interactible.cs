@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class Interactible : MonoBehaviour
 {
-    public int hit;
+    public Interaction interaction;
 
-    public void execute()
+    public void Execute()
     {
-        switch (hit)
+        for (int i = 0; i < interaction.addToInventory.Count; i++)
         {
-            case 0:
-                Debug.Log("Cristal roto");
-                break;
-            case 1:
-                Debug.Log("Cuchillo");
-                break;
-            case 2:
-                Debug.Log("Osito de peluche");
-                break;
+            InventoryController.instance.AddItem(interaction.addToInventory[i]);
         }
+
+        for (int i = 0; i < interaction.removeFromInventory.Count; i++)
+        {
+            InventoryController.instance.RemoveItem(interaction.removeFromInventory[i]);
+        }
+
+        for (int i=0; i < interaction.objectsToActivate.Count; i++)
+        {
+            interaction.objectsToActivate[i].SetActive(true);
+        }
+
+        for (int i = 0; i < interaction.objectsToDeactivate.Count; i++)
+        {
+            interaction.objectsToDeactivate[i].SetActive(false);
+        }
+
+
     }
 }
