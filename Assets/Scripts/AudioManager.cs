@@ -83,7 +83,7 @@ public class AudioManager : MonoBehaviour
 
     public void playGrabFlashlight()
     {
-        playOneShot(grabFlashlight);
+        playOneShot(grab_flashlight);
     }
 
     public void playKnife()
