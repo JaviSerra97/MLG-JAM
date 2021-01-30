@@ -8,8 +8,6 @@ public class Interactible : MonoBehaviour
 
     public void Execute()
     {
-        Debug.Log("HOLA");
-
         if (interaction.itemNeeded == InventoryController.ItemType.none || InventoryController.instance.CheckItem(interaction.itemNeeded))
         {
             interaction.OnInteract.Invoke();
