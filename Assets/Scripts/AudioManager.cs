@@ -35,8 +35,12 @@ public class AudioManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string ui_next;
 
+    [FMODUnity.EventRef]
+    public string rope;
+
     private Transform cameraPos;
     FMOD.Studio.EventInstance musicEV;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,21 +54,25 @@ public class AudioManager : MonoBehaviour
         
     }
 
+    /*Pasos para poner en la animacion*/
     public void playStep()
     {
         playOneShot(step);
     }
 
+    /* linterna on/off */
     public void playFlashlightToggle()
     {
         playOneShot(flashlight_toggle);
     }
 
+    /* puerta creak */
     public void playCreakyDoor()
     {
         playOneShot(creaky_door);
     }
 
+    /* sonido para texto (TODO implementar las transiciones de letras)*/
     public void playTypewriter()
     {
         playOneShot(typewriter);
@@ -99,6 +107,13 @@ public class AudioManager : MonoBehaviour
     public void playUINext()
     {
         playOneShot(ui_next);
+    }
+
+    /* para cuando camina entre la cuerda */
+    // Es un bucle
+    public void playRope()
+    {
+        playOneShot(rope);
     }
 
     private void playOneShot(string name)
