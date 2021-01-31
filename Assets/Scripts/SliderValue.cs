@@ -17,6 +17,6 @@ public class SliderValue : MonoBehaviour
 
     public void ChangeValue()
     {
-        text.text = slider.value.ToString();
+        text.text = (100 + slider.value).ToString();
     }
 }

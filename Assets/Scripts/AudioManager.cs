@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
+    public Slider music;
+    public Slider effects;
 
     [FMODUnity.EventRef]
     public string main_music;
@@ -49,6 +54,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] [Range(-80f, 10f)]
     private float musicVolume;
+    [SerializeField] [Range(-80f, 10f)]
     private float sfxVolume;
 
     private Transform cameraPos;
@@ -60,6 +66,15 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.Bus sfxBus;
     FMOD.Studio.Bus musicBus;
 
+    
+    private void Awake()
+    {
+        if (!instance) { instance = this; }
+        else { Destroy(gameObject); }
+
+        DontDestroyOnLoad(gameObject);
+    }
+    
 
     // Start is called before the first frame update
     void Start()
@@ -170,15 +185,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void setMusicVolume(float volume)
+    public void setMusicVolume()
     {
-        musicVolume = Mathf.Pow(10.0f, volume / 20f);
+        musicVolume = Mathf.Pow(10.0f, music.value / 20f);
         musicBus.setVolume(musicVolume);
     }
 
-    public void setSFXVolume(float volume)
+    public void setSFXVolume()
     {
-        sfxVolume = Mathf.Pow(10.0f, volume / 20f);
+        sfxVolume = Mathf.Pow(10.0f, effects.value / 20f);
         sfxBus.setVolume(sfxVolume);
     }
 

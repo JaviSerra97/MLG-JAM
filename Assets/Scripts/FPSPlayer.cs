@@ -55,6 +55,7 @@ public class FPSPlayer : MonoBehaviour
         }
 
         characterController.Move(moveDirection * Time.deltaTime);
+        //if(moveDirection != Vector3.zero) { AudioManager.instance.playStep(); }
     }
 
     private void MovementCamera()

@@ -38,6 +38,7 @@ public class InventoryController : MonoBehaviour
         currentItem = Instantiate(InventoryItemPrefab, InventoryParent);
         itemList.Add(type);
         itemImageList.Add(currentItem);
+        //AudioManager.instance.playGrab();
 
         switch (type)
         {
