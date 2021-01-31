@@ -92,7 +92,7 @@ public class InventoryController : MonoBehaviour
                 break;
 
             case ItemType.card:
-                currentItem.GetComponent<Image>().color = Color.green;
+                currentItem.GetComponent<Image>().sprite = spriteList[7];
 
                 break;
 

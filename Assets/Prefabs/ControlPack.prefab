@@ -302,12 +302,14 @@ MonoBehaviour:
     type: 3}
   InventoryParent: {fileID: 6259391607056151092}
   spriteList:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 004548bac50759240a171cb57983103e, type: 3}
+  - {fileID: 21300000, guid: 3d86170953489e64ab8ed8692c123552, type: 3}
   - {fileID: 21300000, guid: 49398b7047edffc47ba4ef7872d4821d, type: 3}
   - {fileID: 21300000, guid: f6fc283fb3597904a93ab58678165775, type: 3}
   - {fileID: 21300000, guid: 281314c2f5b0aff4fbec9f337dd3633b, type: 3}
   - {fileID: 21300000, guid: 492e3d7b879c11742a0d7dc8c01b7ba7, type: 3}
+  - {fileID: 21300000, guid: a8ab10810af515c41ad156e9b048ea35, type: 3}
+  - {fileID: 21300000, guid: 2504aa76ace666242a7ea62c2f793df4, type: 3}
   ultimateDestroyObject: []
 --- !u!1 &6259391606252164403
 GameObject:
