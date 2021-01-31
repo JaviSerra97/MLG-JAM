@@ -18,7 +18,7 @@ public class Examinable : MonoBehaviour
 
     public void ExamineObject()
     {
-        ObjectExaminer.instance.SetObjectToExamine(objectToExamine, objectName);
+        ObjectExaminer.instance.SetObjectToExamine(objectToExamine);
     }
 
     public Material GetOriginalMaterial()

@@ -28,12 +28,12 @@ public class Order : MonoBehaviour
                     DeactivateAll();
                 }
 
-                else if(orderToActivate.Count == 5)
+                else if(i == 4 && orderToActivate[i].activeInHierarchy && orderToActivate[i - 1].activeInHierarchy)
                 {
                     note.SetActive(true);
 
-                    cage.SetActive(true);
-                    cageFinal.SetActive(false);
+                    cage.SetActive(false);
+                    cageFinal.SetActive(true);
                 }
             }
         }
