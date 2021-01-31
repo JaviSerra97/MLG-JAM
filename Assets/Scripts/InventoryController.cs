@@ -7,7 +7,7 @@ public class InventoryController : MonoBehaviour
 {
     public enum ItemType
     {
-        none, notaOsito, hammer, nota1, nota2, nota3, rope, card, libro_rojo, libro_verde, libro_azul, libro_rosa, libro_amarillo
+        none, notaOsito, hammer, nota1, nota2, nota3, rope, card, libro_rojo, libro_verde, libro_azul, libro_rosa, libro_amarillo, nota4
     }
 
     public static InventoryController instance;
@@ -92,12 +92,17 @@ public class InventoryController : MonoBehaviour
                 break;
 
             case ItemType.rope:
-                currentItem.GetComponent<Image>().sprite = spriteList[6];
+                currentItem.GetComponent<Image>().sprite = spriteList[7];
 
                 break;
 
             case ItemType.card:
-                currentItem.GetComponent<Image>().sprite = spriteList[7];
+                currentItem.GetComponent<Image>().sprite = spriteList[8];
+
+                break;
+
+            case ItemType.nota4:
+                currentItem.GetComponent<Image>().sprite = spriteList[0];
 
                 break;
 
@@ -145,5 +150,14 @@ public class InventoryController : MonoBehaviour
     public int GetPutted()
     {
         return putted;
+    }
+
+    public bool IsBook(ItemType type)
+    {
+        if(type == ItemType.libro_amarillo || type == ItemType.libro_azul
+            || type == ItemType.libro_rojo || type == ItemType.libro_rosa
+            || type == ItemType.libro_verde) { return true;}
+
+        return false;
     }
 }

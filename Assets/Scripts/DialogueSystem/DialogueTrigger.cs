@@ -6,11 +6,16 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
 
-   
+    private DialogueManager dialogueManager;
+
+    private void Awake()
+    {
+        dialogueManager = FindObjectOfType<DialogueManager>();
+    }
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        dialogueManager.StartDialogue(dialogue);
     }
 
 }
