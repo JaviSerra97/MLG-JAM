@@ -32,25 +32,25 @@ public class CorkboardController : MonoBehaviour
             InventoryController.instance.RemoveItem(InventoryController.ItemType.notaOsito);
         }
 
-        if (InventoryController.instance.CheckItem(InventoryController.ItemType.nota2))
+        if (InventoryController.instance.CheckItem(InventoryController.ItemType.nota1))
         {
             note2.SetActive(true);
             note2Examine.SetActive(true);
-            InventoryController.instance.RemoveItem(InventoryController.ItemType.nota2);
+            InventoryController.instance.RemoveItem(InventoryController.ItemType.nota1);
         }
         
-        if (InventoryController.instance.CheckItem(InventoryController.ItemType.nota3))
+        if (InventoryController.instance.CheckItem(InventoryController.ItemType.nota2))
         {
             note3.SetActive(true);
             note3Examine.SetActive(true);
-            InventoryController.instance.RemoveItem(InventoryController.ItemType.nota3);
+            InventoryController.instance.RemoveItem(InventoryController.ItemType.nota2);
         }
 
-        if (InventoryController.instance.CheckItem(InventoryController.ItemType.nota4))
+        if (InventoryController.instance.CheckItem(InventoryController.ItemType.nota3))
         {
             note4.SetActive(true);
             note4Examine.SetActive(true);
-            InventoryController.instance.RemoveItem(InventoryController.ItemType.nota4);
+            InventoryController.instance.RemoveItem(InventoryController.ItemType.nota3);
         }
     }
 }
