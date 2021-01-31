@@ -6,7 +6,10 @@ public class AudioManager : MonoBehaviour
 {
 
     [FMODUnity.EventRef]
-    public string music;
+    public string main_music;
+
+    [FMODUnity.EventRef]
+    public string intro_music;
 
     [FMODUnity.EventRef]
     public string step;
@@ -41,12 +44,16 @@ public class AudioManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string rope;
 
+    [FMODUnity.EventRef]
+    public string drop_book;
+
     [SerializeField] [Range(-80f, 10f)]
     private float musicVolume;
     private float sfxVolume;
 
     private Transform cameraPos;
-    FMOD.Studio.EventInstance musicEV;
+    FMOD.Studio.EventInstance main_music_ev;
+    FMOD.Studio.EventInstance intro_music_ev;
     FMOD.Studio.EventInstance ropeAudio;
 
     private bool ropeActivated = false;
@@ -59,20 +66,29 @@ public class AudioManager : MonoBehaviour
     {
         cameraPos = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
 
-        musicEV = FMODUnity.RuntimeManager.CreateInstance(music);
-        musicEV.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(cameraPos));
-        musicEV.start();
+        intro_music_ev = FMODUnity.RuntimeManager.CreateInstance(intro_music);
+
+        main_music_ev = FMODUnity.RuntimeManager.CreateInstance(main_music);
+        main_music_ev.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(cameraPos));
 
 
         sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
         musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Music");
         ropeAudio = FMODUnity.RuntimeManager.CreateInstance(rope);
+
+        intro_music_ev.start();
     }
 
     // Update is called once per frame
     void Update()
     {
         ropeAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(cameraPos));
+    }
+
+    public void startMainMusic()
+    {
+        intro_music_ev.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        main_music_ev.start();
     }
 
     /*Pasos para poner en la animacion*/
@@ -128,6 +144,11 @@ public class AudioManager : MonoBehaviour
     public void playUINext()
     {
         playOneShot(ui_next);
+    }
+
+    public void playDropBook()
+    {
+        playOneShot(drop_book);
     }
 
     /* para cuando camina entre la cuerda */

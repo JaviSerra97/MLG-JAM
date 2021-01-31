@@ -80,6 +80,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{f99ff3ae-b494-4b43-baf1-9bdd78cc9e7c}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{9c0443ec-4dd4-4d87-9e7c-6133890fb841}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{6d4dabac-5533-46e9-91bd-5c6da72cc909}</destination>
 		</relationship>
@@ -92,7 +98,7 @@
 	</object>
 	<object class="MultiSound" id="{3d1a4846-fedd-4202-8bed-fa0f6b9c0e2b}">
 		<relationship name="sounds">
-			<destination>{55dcaa14-72a9-4ebb-98cb-8b14215dcfda}</destination>
+			<destination>{1a07b9a5-7d13-45b5-ad3a-3d94cd537034}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{77224fb2-0d6e-44d1-96f8-2c95331d0d6e}">
@@ -115,18 +121,29 @@
 			<destination>{f99ff3ae-b494-4b43-baf1-9bdd78cc9e7c}</destination>
 		</relationship>
 	</object>
+	<object class="ADSRModulator" id="{9c0443ec-4dd4-4d87-9e7c-6133890fb841}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{6d4dabac-5533-46e9-91bd-5c6da72cc909}">
 		<relationship name="effects">
 			<destination>{3124fb2d-d3bf-40d7-be64-11aea938bf7a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{497aa4d9-108d-4740-9ed7-9f1eb01ad044}" />
-	<object class="SingleSound" id="{55dcaa14-72a9-4ebb-98cb-8b14215dcfda}">
+	<object class="SingleSound" id="{1a07b9a5-7d13-45b5-ad3a-3d94cd537034}">
 		<property name="looping">
 			<value>true</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{2a2c21e5-e381-426c-a5f1-420cc0eeb178}</destination>
+			<destination>{a6253060-1355-4260-bb4e-508dff8910c5}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{369b5fc0-bd98-41bf-8568-278e21ace42f}" />
