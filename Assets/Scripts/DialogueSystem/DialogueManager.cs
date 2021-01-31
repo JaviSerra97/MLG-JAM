@@ -5,14 +5,13 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TMP_Text nameText;
     public TMP_Text dialogueText;
 
     public GameObject conversationPanel;
 
     private Queue<string> sentences;
 
-    private void Start()
+    private void Awake()
     {
         sentences = new Queue<string>();
     }
@@ -25,8 +24,6 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         conversationPanel.SetActive(true);
-
-        nameText.text = dialogue.name;
 
         sentences.Clear();
 

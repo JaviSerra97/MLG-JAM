@@ -6,6 +6,10 @@ public class Order : MonoBehaviour
 {
     public List<GameObject> orderToActivate;
 
+    public GameObject note;
+
+    public GameObject cage;
+
     public void CheckOrder()
     {
         for(int i = 0; i < orderToActivate.Count; i++)
