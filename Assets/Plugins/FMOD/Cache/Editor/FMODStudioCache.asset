@@ -214,7 +214,7 @@ MonoBehaviour:
   Path: fmod_vanesa/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637476903977915366
+  lastModified: 637476904570000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -572,11 +572,9 @@ MonoBehaviour:
   Path: fmod_vanesa/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476903977830295
+  lastModified: 637476904570000000
   LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1466
+  FileSizes: []
   Exists: 1
 --- !u!114 &-1592545544517939798
 MonoBehaviour:
@@ -639,7 +637,7 @@ MonoBehaviour:
   Path: fmod_vanesa/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637476903978235639
+  lastModified: 637476904580000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -764,7 +762,7 @@ MonoBehaviour:
   - {fileID: 4204076176846047457}
   StringsBanks:
   - {fileID: -2592811693406208936}
-  stringsBankWriteTime: 637476903977830295
+  stringsBankWriteTime: 637476904570000000
   cacheVersion: 6
 --- !u!114 &122957118594234758
 MonoBehaviour:
@@ -1007,7 +1005,7 @@ MonoBehaviour:
   Path: fmod_vanesa/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476836968480258
+  lastModified: 637476532120000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
