@@ -21,9 +21,7 @@ public class CameraShake : MonoBehaviour
 		if (other.gameObject.CompareTag("Player"))
 		{
 			originalPos = camTransform.localPosition;
-			Debug.Log("EnterIN");
 		}
-		Debug.Log("Enter");
 	}
 
     private void OnTriggerStay(Collider other)
@@ -31,9 +29,7 @@ public class CameraShake : MonoBehaviour
 		if (other.gameObject.CompareTag("Player"))
 		{
 			camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
-			Debug.Log("StayIN");
 		}
-		Debug.Log("Stay");
 	}
 
     private void OnTriggerExit(Collider other)
@@ -41,8 +37,6 @@ public class CameraShake : MonoBehaviour
 		if (other.gameObject.CompareTag("Player"))
 		{
 			camTransform.localPosition = originalPos;
-			Debug.Log("ExitIN");
 		}
-		Debug.Log("Exit");
 	}
 }
