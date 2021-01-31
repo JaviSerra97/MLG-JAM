@@ -151,13 +151,4 @@ public class InventoryController : MonoBehaviour
     {
         return putted;
     }
-
-    public bool IsBook(ItemType type)
-    {
-        if(type == ItemType.libro_amarillo || type == ItemType.libro_azul
-            || type == ItemType.libro_rojo || type == ItemType.libro_rosa
-            || type == ItemType.libro_verde) { return true;}
-
-        return false;
-    }
 }

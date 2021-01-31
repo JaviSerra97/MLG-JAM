@@ -46,7 +46,8 @@ public class Interactible : MonoBehaviour
                 for (int i = 0; i < interaction.objectsToDeactivate.Count; i++)
                 {
                     interaction.objectsToDeactivate[i].SetActive(false);
-                    InventoryController.instance.ultimateDestroyObject.Add(interaction.objectsToDeactivate[i]);
+                    if (GetLabel() == "libro_rojo" || GetLabel() == "libro_verde" || GetLabel() == "libro_azul" || GetLabel() == "libro_rosa" || GetLabel() == "libro_amarillo")
+                        InventoryController.instance.ultimateDestroyObject.Add(interaction.objectsToDeactivate[i]);
                 }
 
                 interaction.OnInteract.Invoke();
@@ -82,6 +83,11 @@ public class Interactible : MonoBehaviour
     public Quaternion GetInitialRotation()
     {
         return InitialRotation;
+    }
+
+    public string GetLabel()
+    {
+        return interaction.label;
     }
 }
     

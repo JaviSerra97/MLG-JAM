@@ -27,11 +27,18 @@ public class Stack : MonoBehaviour
         {
             for (int i = iterator; i < ultimate.Count; i++)
             {
-                stack1.Add(ultimate[i]);
-                pivot.transform.Rotate(new Vector3(-1 * weight, 0, 0));
-                InventoryController.instance.AddPutted();
-                ultimate[i].SetActive(true);
-                ultimate[i].GetComponent<Interactible>().FinishInteration();
+                /*if(ultimate[i].GetComponent<Interactible>().GetLabel() == "libro_rojo"||
+                   ultimate[i].GetComponent<Interactible>().GetLabel() == "libro_verde" ||
+                   ultimate[i].GetComponent<Interactible>().GetLabel() == "libro_azul" ||
+                   ultimate[i].GetComponent<Interactible>().GetLabel() == "libro_rosa" ||
+                   ultimate[i].GetComponent<Interactible>().GetLabel() == "libro_amarillo")
+                {*/
+                    stack1.Add(ultimate[i]);
+                    pivot.transform.Rotate(new Vector3(-1 * weight, 0, 0));
+                    InventoryController.instance.AddPutted();
+                    ultimate[i].SetActive(true);
+                    ultimate[i].GetComponent<Interactible>().FinishInteration();
+                //}
             }
         }
         else
