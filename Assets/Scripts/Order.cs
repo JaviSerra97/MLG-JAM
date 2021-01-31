@@ -10,6 +10,8 @@ public class Order : MonoBehaviour
 
     public GameObject cage;
 
+    public GameObject cageFinal;
+
     public void CheckOrder()
     {
         for(int i = 0; i < orderToActivate.Count; i++)
@@ -24,6 +26,14 @@ public class Order : MonoBehaviour
                 if (orderToActivate[i].activeInHierarchy && !orderToActivate[i - 1].activeInHierarchy)
                 {
                     DeactivateAll();
+                }
+
+                else if(orderToActivate.Count == 5)
+                {
+                    note.SetActive(true);
+
+                    cage.SetActive(true);
+                    cageFinal.SetActive(false);
                 }
             }
         }

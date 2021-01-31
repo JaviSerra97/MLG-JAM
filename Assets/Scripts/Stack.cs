@@ -11,6 +11,8 @@ public class Stack : MonoBehaviour
     private int position1,position2, iterator, nObjects;
     private GameObject pivot;
 
+    public GameObject note;
+
     private void Awake()
     {
         pivot = GameObject.FindGameObjectWithTag("PivotWeightScale");
@@ -27,18 +29,11 @@ public class Stack : MonoBehaviour
         {
             for (int i = iterator; i < ultimate.Count; i++)
             {
-                /*if(ultimate[i].GetComponent<Interactible>().GetLabel() == "libro_rojo"||
-                   ultimate[i].GetComponent<Interactible>().GetLabel() == "libro_verde" ||
-                   ultimate[i].GetComponent<Interactible>().GetLabel() == "libro_azul" ||
-                   ultimate[i].GetComponent<Interactible>().GetLabel() == "libro_rosa" ||
-                   ultimate[i].GetComponent<Interactible>().GetLabel() == "libro_amarillo")
-                {*/
-                    stack1.Add(ultimate[i]);
-                    pivot.transform.Rotate(new Vector3(-1 * weight, 0, 0));
-                    InventoryController.instance.AddPutted();
-                    ultimate[i].SetActive(true);
-                    ultimate[i].GetComponent<Interactible>().FinishInteration();
-                //}
+                stack1.Add(ultimate[i]);
+                pivot.transform.Rotate(new Vector3(-1 * weight, 0, 0));
+                InventoryController.instance.AddPutted();
+                ultimate[i].SetActive(true);
+                ultimate[i].GetComponent<Interactible>().FinishInteration();
             }
         }
         else
@@ -104,9 +99,16 @@ public class Stack : MonoBehaviour
                 reset = true;
             }
 
-            if (reset)
-                Invoke("ResetHeap",2f);
+        if (reset)
+        {
 
+            Invoke("ResetHeap", 2f);
+        }
+
+        else
+        {
+            note.SetActive(true);
+        }
     }
 
     public void ResetHeap()
