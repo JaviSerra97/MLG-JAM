@@ -95,10 +95,9 @@ public class ObjectExaminer : MonoBehaviour
     }
 
 
-    public void SetObjectToExamine(GameObject objectToExamine, string name)
+    public void SetObjectToExamine(GameObject objectToExamine)
     {
         currentExaminedObject = objectToExamine.transform;
-        objectName.text = name;
         BeginExamine();
     }
 
