@@ -12,6 +12,8 @@ public class Interactible : MonoBehaviour
     private Renderer objectRenderer;
     private Material originalMaterial;
 
+    public bool isNote;
+
     private void Awake()
     {
         interactive = true;
@@ -72,7 +74,10 @@ public class Interactible : MonoBehaviour
 
     public void SetMaterial(Material material)
     {
-        objectRenderer.material = material;
+        if (!isNote)
+        {
+            objectRenderer.material = material;
+        }
     }
 
     public Vector3 GetInitialPosition()

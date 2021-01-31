@@ -10,6 +10,8 @@ public class Examinable : MonoBehaviour
     private Renderer objectRenderer;
     private Material originalMaterial;
 
+    public bool isNote;
+
     private void Start()
     {
         objectRenderer = GetComponent<Renderer>();
@@ -28,6 +30,6 @@ public class Examinable : MonoBehaviour
 
     public void SetMaterial(Material material)
     {
-        objectRenderer.material = material;
+        if (!isNote) { objectRenderer.material = material; }
     }
 }

@@ -12,6 +12,11 @@ public class CorkboardController : MonoBehaviour
     public GameObject note3;
     public GameObject note4;
 
+    public GameObject fakeMirror;
+    public GameObject mirror;
+
+    private int notesCounter = 0;
+
     /*
     [Header("Examinando")]
     public GameObject note1Examine;
@@ -30,6 +35,7 @@ public class CorkboardController : MonoBehaviour
         if (InventoryController.instance.CheckItem(InventoryController.ItemType.nota4))
         {
             note4.SetActive(true);
+            notesCounter++;
             //note1Examine.SetActive(true);
             InventoryController.instance.RemoveItem(InventoryController.ItemType.nota4);
         }
@@ -37,6 +43,7 @@ public class CorkboardController : MonoBehaviour
         if (InventoryController.instance.CheckItem(InventoryController.ItemType.nota1))
         {
             note1.SetActive(true);
+            notesCounter++;
             //note2Examine.SetActive(true);
             InventoryController.instance.RemoveItem(InventoryController.ItemType.nota1);
         }
@@ -44,6 +51,7 @@ public class CorkboardController : MonoBehaviour
         if (InventoryController.instance.CheckItem(InventoryController.ItemType.nota2))
         {
             note2.SetActive(true);
+            notesCounter++;
             //note3Examine.SetActive(true);
             InventoryController.instance.RemoveItem(InventoryController.ItemType.nota2);
         }
@@ -51,8 +59,15 @@ public class CorkboardController : MonoBehaviour
         if (InventoryController.instance.CheckItem(InventoryController.ItemType.nota3))
         {
             note3.SetActive(true);
+            notesCounter++;
             //note4Examine.SetActive(true);
             InventoryController.instance.RemoveItem(InventoryController.ItemType.nota3);
+        }
+
+        if(notesCounter == 4)
+        {
+            fakeMirror.SetActive(false);
+            mirror.SetActive(true);
         }
     }
 }
