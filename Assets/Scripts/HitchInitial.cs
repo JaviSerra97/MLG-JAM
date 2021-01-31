@@ -9,6 +9,7 @@ public class HitchInitial : MonoBehaviour
 
     GameObject hand;
     GameObject rope, correctRope;
+    public GameObject barrera;
 
     void Awake()
     {
@@ -25,22 +26,28 @@ public class HitchInitial : MonoBehaviour
         if (!reached && rope.activeInHierarchy)
         {
             transform.LookAt(hand.transform);
+            barrera.SetActive(false);
         }       
     }
 
     public void Activate()
     {
         rope.SetActive(true);
+        
+        
     }
 
     public void Deactivate()
     {
         rope.SetActive(false);
+        barrera.SetActive(true);
+
     }
 
     public void Reached()
     {
         reached = true;
+        
         rope.SetActive(false);
         correctRope.SetActive(true);
     }
