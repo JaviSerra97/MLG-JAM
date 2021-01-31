@@ -62,7 +62,7 @@ public class InventoryController : MonoBehaviour
                 break;
 
             case ItemType.hammer:
-                currentItem.GetComponent<Image>().color = Color.green;
+                currentItem.GetComponent<Image>().sprite = spriteList[1];
 
                 break;
 
